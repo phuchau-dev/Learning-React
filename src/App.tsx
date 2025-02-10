@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import CircleAvatar from './components/Circle_Avatar';
 
-function App() {
+const App: React.FC = () => {
+  const handleAvatarClick = () => {
+    console.log('Avatar clicked!');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        Instagram App
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CircleAvatar
+        src="https://cdn-icons-png.flaticon.com/512/18499/18499151.png"
+        alt="User Avatar"
+        size='sm'
+        borderColor="#ff0000"
+        borderWidth={1}
+        onClick={handleAvatarClick}
+      />
     </div>
   );
-}
+};
 
 export default App;
