@@ -4,25 +4,27 @@ import {
   IconHomeActive,
   IconSearch,
   IconSearchActive,
+  IconCreate,
+  IconCreateActive,
+  IconMessages,
+  IconMessagesActive,
+  IconNotifications,
+  IconNotificationsActive,
+  IconExplore,
+  IconExploreActive,
+  IconMore,
+  IconMoreActive,
+  IconReels,
+  IconReelsActive,
 } from '../../components/Icons';
-import IconCreate from '../../components/Icons/icon_create';
-import IconCreateActive from '../../components/Icons/icon_create_active';
-import IconExplore from '../../components/Icons/icon_explore';
-import IconExploreActive from '../../components/Icons/icon_explore_active';
-import IconMessages from '../../components/Icons/icon_messages';
-import IconMessagesActive from '../../components/Icons/icon_messages_active';
-import IconMore from '../../components/Icons/icon_more';
-import IconMoreActive from '../../components/Icons/icon_more_active';
-import IconNotifications from '../../components/Icons/icon_notifications';
-import IconNotificationsActive from '../../components/Icons/icon_notifications_active';
-import IconReels from '../../components/Icons/icon_reels';
-import IconReelsActive from '../../components/Icons/icon_reels_active';
+
 import { InstagramLogo } from '../../components/Images';
 import MenuAvatar from '../../components/Menu_Avatar';
 import NavItem from '../../components/Nav-Item';
 import styles from './style.module.css';
+import { SidebarProps } from './type';
 
-const Sidebar: React.FC = () => {
+const Sidebar: React.FC<SidebarProps> = ({ tabActive, onClickTab }) => {
   return (
     <div className={styles.sidebar}>
       <div
@@ -34,9 +36,9 @@ const Sidebar: React.FC = () => {
         <NavItem
           activeIcon={<IconHomeActive />}
           icon={<IconHome />}
-          isActive={true}
+          isActive={tabActive ===""}
           title="Home"
-          onClick={() => console.log('Home Tab')}
+          onClick={() => onClickTab("")}
         />
         <NavItem
           activeIcon={<IconSearchActive />}
@@ -48,16 +50,16 @@ const Sidebar: React.FC = () => {
         <NavItem
           activeIcon={<IconExploreActive />}
           icon={<IconExplore />}
-          isActive={false}
+          isActive={tabActive ==="explore"}
           title="Explore"
-          onClick={() => console.log('Explore Tab')}
+          onClick={() => onClickTab("explore")}
         />
         <NavItem
           activeIcon={<IconReelsActive />}
           icon={<IconReels />}
-          isActive={false}
+          isActive={tabActive ==="reels"}
           title="Reels"
-          onClick={() => console.log('Reels Tab')}
+          onClick={() => onClickTab("reels")}
         />
         <NavItem
           activeIcon={<IconMessagesActive />}
@@ -98,12 +100,12 @@ const Sidebar: React.FC = () => {
               size="sm"
               borderColor="#ff0000"
               borderWidth={2}
-              isActive={false}
+              isActive={true}
             />
           }
-          isActive={false}
+          isActive={tabActive ==="profile"}
           title="Profile"
-          onClick={() => console.log('Profile Tab')}
+          onClick={() => onClickTab("profile")}
         />
       </div>
       <div className={`mb-6`}>
