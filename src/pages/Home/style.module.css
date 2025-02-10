@@ -1,4 +1,15 @@
-.rootPage {
-  display: flex;
-  height: 100vh;
+
+
+.container_feed {
+  max-width: 470px;
+  margin-right: 32px;
+  background-color: beige;
+  height: 400px;
+  width: 400px;
+}
+.suggestions{
+  max-width: 319px;
+  background-color: bisque;
+  height: 300px;
+
 }

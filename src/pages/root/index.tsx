@@ -3,7 +3,8 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
+import Content from '../../layout/Content';
 import Sidebar from '../../layout/Sidebar';
 import styles from './style.module.css';
 
@@ -21,12 +22,14 @@ const RootPage: React.FC = () => {
     [navigate],
   );
   return (
-    <div className={styles.rootPage}>
+    <div className={`${styles.layout}`}>
       <Sidebar
         tabActive={tabActive}
         onClickTab={setTabActive}
       />
-      <div>Main layout</div>
+      <Content>
+        <Outlet />
+      </Content>
     </div>
   );
 };

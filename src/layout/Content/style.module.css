@@ -1,0 +1,9 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center; /* Thêm thuộc tính này để căn giữa theo chiều ngang */
+  padding: 20px; /* Thêm khoảng cách từ các cạnh */
+  background-color: #f9f9f9; /* Thêm màu nền nếu cần */
+}
