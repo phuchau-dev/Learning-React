@@ -6,8 +6,6 @@ const CircleAvatar: React.FC<CircleAvatarProps> = ({
   src,
   alt = 'avatar',
   size = 'md',
-  borderColor = 'black',
-  borderWidth = 2,
   onClick,
 }) => {
   const sizeClass =
@@ -22,8 +20,6 @@ const CircleAvatar: React.FC<CircleAvatarProps> = ({
   const customStyles = {
     width: `${size}px`,
     height: `${size}px`,
-    borderColor: borderColor,
-    borderWidth: `${borderWidth}px`,
     borderStyle: 'solid',
   };
 
@@ -33,7 +29,7 @@ const CircleAvatar: React.FC<CircleAvatarProps> = ({
       style={customStyles}
       onClick={onClick}
     >
-      <img src={src} alt={alt} className={styles.img} />
+      <img src={src} alt={alt} className={styles.img}  draggable={false} />
     </div>
   );
 };
