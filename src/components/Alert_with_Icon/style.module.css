@@ -1,0 +1,28 @@
+/* style.module.css */
+.alert {
+  @apply flex items-center p-4 mb-4 rounded-xl text-sm border;
+}
+
+.alertSuccess {
+  @apply border-emerald-400 bg-emerald-50 text-emerald-500;
+}
+
+.alertError {
+  @apply border-red-400 bg-red-50 text-red-500;
+}
+
+.alertWarning {
+  @apply border-yellow-400 bg-yellow-50 text-yellow-500;
+}
+
+.alertInfo {
+  @apply border-blue-400 bg-blue-50 text-blue-500;
+}
+
+.icon {
+  @apply w-5 h-5 mr-2;
+}
+
+.fontBold {
+  @apply font-semibold mr-1;
+}

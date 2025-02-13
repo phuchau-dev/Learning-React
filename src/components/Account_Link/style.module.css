@@ -1,0 +1,24 @@
+/* style.module.css */
+.accountLinkContainer {
+  @apply mt-4 text-gray-600 text-center;
+}
+
+.textSm {
+  @apply text-sm;
+}
+
+.textMd {
+  @apply text-base;
+}
+
+.textLg {
+  @apply text-lg;
+}
+
+.textXl {
+  @apply text-xl;
+}
+
+.link {
+  @apply text-black hover:underline;
+}

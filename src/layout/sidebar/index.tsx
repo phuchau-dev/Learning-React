@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   IconHome,
   IconHomeActive,
@@ -20,11 +21,16 @@ import {
 
 import { InstagramLogo } from '../../components/Images';
 import MenuAvatar from '../../components/Menu_Avatar';
-import NavItem from '../../components/Nav-Item';
+import NavItem from '../../components/Nav_Item';
 import styles from './style.module.css';
 import { SidebarProps } from './type';
 
 const Sidebar: React.FC<SidebarProps> = ({ tabActive, onClickTab }) => {
+  const navigate = useNavigate(); 
+  const handleTabClick = (tab: string) => {
+    onClickTab(tab);
+    navigate(`/${tab}`); 
+  };
   return (
     <div className={styles.sidebar}>
       <div
@@ -38,7 +44,7 @@ const Sidebar: React.FC<SidebarProps> = ({ tabActive, onClickTab }) => {
           icon={<IconHome />}
           isActive={tabActive ===""}
           title="Home"
-          onClick={() => onClickTab("")}
+          onClick={() => handleTabClick("")}
         />
         <NavItem
           activeIcon={<IconSearchActive />}
@@ -52,14 +58,14 @@ const Sidebar: React.FC<SidebarProps> = ({ tabActive, onClickTab }) => {
           icon={<IconExplore />}
           isActive={tabActive ==="explore"}
           title="Explore"
-          onClick={() => onClickTab("explore")}
+          onClick={() => handleTabClick("explore")}
         />
         <NavItem
           activeIcon={<IconReelsActive />}
           icon={<IconReels />}
           isActive={tabActive ==="reels"}
           title="Reels"
-          onClick={() => onClickTab("reels")}
+          onClick={() => handleTabClick("reels")} 
         />
         <NavItem
           activeIcon={<IconMessagesActive />}

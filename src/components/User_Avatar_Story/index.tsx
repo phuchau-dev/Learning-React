@@ -1,6 +1,5 @@
 import React from 'react';
 import { UserAvatarStoryProps } from './types';
-import styles from './style.module.css';
 import CircleAvatar from '../Circle_Avatar';
 
 const UserAvatarStory: React.FC<UserAvatarStoryProps> = ({

@@ -1,4 +1,6 @@
-.rootPage {
-  display: flex;
-  height: 100vh;
-}
+.container_feed {
+    max-width: 870px;
+    margin-right: 32px;
+    width: 100%;
+  
+  }
